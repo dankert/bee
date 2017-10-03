@@ -13,6 +13,29 @@ section {
   display: block;
 }
 
+footer {
+	display:block;
+	background-color:silver; padding:20px;
+}
+
+body > header
+{
+	width:100%;
+	background:silver;
+}
+
+nav#recent,nav#calendar,nav#keywords,nav#categories {
+	float:right;
+	width:33%;
+	clear:right;
+}
+
+article,nav#related
+{
+	float:left;
+	width:66.9%;
+	clear:left;
+}
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
@@ -34,8 +57,9 @@ body {
   background-color: DimGray;
   color:white;
   width: 100%;
-  max-width:95em;
-  padding:1em;
+  xmax-width:95em;
+  padding:0;
+  margin:0;
 }
 
 html { width:100%; box-sizing: border-box; }

@@ -27,7 +27,7 @@ echo "Date: $UTC"       >> $FILE
 echo "Keywords: $TITLE" >> $FILE
 echo "Category: $TITLE" >> $FILE
 echo "Url:"             >> $FILE
-echo "Author: "         >> $FILE
+echo "Author: `whoami`" >> $FILE
 
 echo "---"              >> $FILE
 echo ""                 >> $FILE

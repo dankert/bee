@@ -15,8 +15,8 @@ body {
 		"Helvetica Neue", sans-serif;
 	font-size: 13px;
 	margin: 0px;
-	background-color: DimGray;
-	color: white;
+	xbackground-color: DimGray;
+	color: #0B0B0B;
 	width: 100%;
 	padding: 0;
 }
@@ -70,42 +70,6 @@ ul ul  {
 		font-size: 1.2em;
 	}
 
-	main article header .date {
-		font-size:1rem;
-	}
-	main article header .author {
-		font-size:1rem;
-		font-style: italic;
-	}
-	main article header .category {
-		font-size:1rem;
-		font-weight: bold;
-		display:inline;
-		padding:0.2em 1em;
-		margin-bottom:0.8em;
-		border: 1px solid gray;
-		border-radius: 0.5em;
-		background-color: gray;
-}
-	main article ul.keywords {
-		font-size:0.8rem;
-		list-style: none;
-		padding:0;
-		margin:4em 0;
-	}
-	main article ul.keywords li {
-		display:inline;
-		padding:0.2em 1em;
-		margin-right: 0.8em;
-		border: 1px solid silver;
-		border-radius: 0.5em;
-		background-color: silver;
-		
-	}
-	img {
-	width:100%;
-	height:auto;
-	}
 
 /* Desktop */
 @media all and (min-width: 50em) {
@@ -143,7 +107,7 @@ main nav#related {
 	
 	main article {
 		max-width:70em;
-		padding:3em 10em;
+		padding:0 10em;
 		margin: 0 auto;
 	}
 }

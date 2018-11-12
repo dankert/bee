@@ -42,7 +42,7 @@ class SiteReader
 				if	( !isset($this->pagesByCategory[$category]))
 					$this->pagesByCategory[$category] = array();
 				$this->pagesByCategory[$category][] = $page;
-				$this->categoryNames[$category] = $page['category'];			
+				$this->categoryNames[$category] = $page['config']['category'];
 			}
 		}
 		
@@ -88,7 +88,7 @@ class SiteReader
 	
 		// Category
 		if	( isset( $page['config']['category'] ))
-			$page['category'] = $page['config']['category'];
+			$page['category'] = $this->urlify($page['config']['category']);
 		
 		
 		// keywords is similar to tags
@@ -128,7 +128,12 @@ class SiteReader
 			$page['title'] = $page['config']['title'];
 		else
 			$page['title'] = basename($page['filename']);
-		
+
+		if (isset($page['config']['theme']))
+			$page['theme'] = $page['config']['theme'];
+		else
+			$page['theme'] = THEME; // not supported - because bee.php doesnt know which theme should be searched for static resources.
+				
 		if (isset($page['config']['author']))
 			// Username from page config.
 			$page['author'] = $page['config']['author'];

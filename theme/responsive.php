@@ -20,7 +20,7 @@ extract($lang,EXTR_SKIP);
   <title><?php echo TITLE ?> - <?php echo $site_title ?></title>
   <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="<?php echo SITE_UP ?>default.css">
+  <link rel="stylesheet" href="<?php echo SITE_UP ?>style.css">
 </head>
 <body>
 
@@ -33,23 +33,18 @@ extract($lang,EXTR_SKIP);
 <article>
 
 	<header id="name">
+		<h1><?php echo TITLE ?></h1>
 		
 		<?php if	( is_array($PAGE) ) { ?>
-		<span class="category"><a href="<?php echo SITE_UP.'category'.SLASH.$PAGE['category'] ?>"><?php echo $CATEGORY_NAMES[$PAGE['category']] ?></a></span><br/><br/>
+		<span class="date"><?php echo strftime($site_date_format_full,$PAGE['date']) ?></span>
 		<span class="author"><?php echo $PAGE['author'] ?></span>
-		<span class="date"><?php echo strftime($site_date_format_full,$PAGE['date']) ?></span><br/>
+		<span class="category"><a href="<?php echo SITE_UP.'category'.SLASH.$PAGE['category'] ?>"><?php echo $PAGE['category'] ?></a></span>
+		<ul class="keywords"><?php foreach( $PAGE['keywords'] as $keyword ) { ?><li><a href="<?php echo SITE_UP.'tag'.SLASH.$keyword ?>"><?php echo $keyword ?></a></li><?php } ?></ul>
 		<?php } ?>
-		
-		<h1><?php echo TITLE ?></h1>
 	</header>
 	
 	<?php echo CONTENT ?>
-	
-	<?php if	( is_array($PAGE) ) { ?>
-	<ul class="keywords"><?php foreach( $PAGE['keywords'] as $keyword ) { ?><li><a href="<?php echo SITE_UP.'tag'.SLASH.$keyword ?>"><?php echo $keyword ?></a></li><?php } ?></ul>
-	<?php } ?>
-	
-	</article>
+</article>
 
 
 <?php if	( is_array($PAGE) )  { ?>
